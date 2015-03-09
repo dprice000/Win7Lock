@@ -32,6 +32,9 @@ namespace Win7Lock
         public static void ShowTaskBar()
         {
             ShowWindow(FindWindow("Shell_TrayWnd", ""), SW_SHOW);
+
+            var buttonHandle = FindWindow("Button", "Start");
+            ShowWindow(buttonHandle, 1);
         }
 
         /// <summary>
@@ -41,6 +44,9 @@ namespace Win7Lock
         public static void HideTaskBar()
         {
             ShowWindow(FindWindow("Shell_TrayWnd", ""), SW_HIDE);
+
+            var buttonHandle = FindWindow("Button", "Start");
+            ShowWindow(buttonHandle, 0);
         }
 
         /// <summary>
